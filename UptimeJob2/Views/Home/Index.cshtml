@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+                
+            </hgroup>
+            <p>
+              Use this page to search Amazon products.
+            </p>
+        </div>
+    </section>
+}
+<h3>Select the category and enter the search keyword:</h3>
+<div>
+        <select name="Category" id="Category">
+            <option value="All" selected>All</option>
+            <option value="UnboxVideo">Amazon instant video</option
+            <option value="MobileApps">Apps & Games</option>
+            <option value="Baby">Baby</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Books">Books</option>
+            <option value="MobileApps">Apps & Games</option>
+            <option value="Music">CDs & Vinyl</option>
+            <option value="Automotive">Car & Motorbike</option>
+            <option value="Classical">Classical</option>
+            <option value="Apparel">Clothing</option>
+            <option value="PCHardware">Computers</option>
+            <option value="Tools">DIY & Tools</option>
+           
+        </select>
+        <input id="SearchInput" type="text" placeholder="Enter Search Keyword" />
+        <input id="SearchButton"type="button" value="Search Products" />
+         
+        <select id="Currency" >
+              <option value="EUR">EUR</option>
+              <option value="AUD">AUD</option> @*Australian Dollar*@
+              <option value="BRL">BRL</option> @*Brasilian Real*@
+              <option value="CAD">CAD</option> @*Canadian Dollar*@
+              <option value="CLP">CLP</option> @*Chile Peso*@
+              <option value="CNY">CNY</option> @*China yuan renminbi*@
+              <option value="CZK">CZK</option> @*Czech republic kruona*@
+              <option value="DKK">DKK</option> @*Danish krone*@
+              <option value="USD">USD</option>
+              <option value="ARS">ARS</option> @*Argentina peso*@
+              <option value="GBP">GBP</option> @*british pound*@
+         </select>
+</div>
+@*Datatable will be added to main*@
+<section id="main">
+
+</section>
