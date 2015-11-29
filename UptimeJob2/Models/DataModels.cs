@@ -9,8 +9,7 @@ namespace UptimeJob2.Models
     {
         public class SearchResult
         {
-            public string Error="";
-         //   public string Name { get; set; }
+            public string Error="";       
             public List<SearchResultsList> _SearchResultsList { get; set; }
             public class SearchResultsList
             {

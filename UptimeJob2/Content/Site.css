@@ -15,7 +15,7 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
-   
+   color:white;
 }
 
 a {
@@ -477,8 +477,9 @@ textarea {
     input[type="submit"],
     input[type="button"],
     button {
-        background-color: #80B0C5;
-        border: 1px solid #80B0C5;              
+        background-color: rgba(70, 65, 65, 0.59);
+        border: 1.5px solid #fff;       
+        color:moccasin;       
         border-radius: 7px;
         cursor: pointer;
         font-size: 1.0em;

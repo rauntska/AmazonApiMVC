@@ -3,7 +3,9 @@ $(document).ready(function ()
 {
     console.log("ready!");
 });
-$('#SearchButton').click(function() {
+
+
+$('#SearchButton').click(function () {
 
     //window.location.href = '/SearchProduct/Search';
     $('#main').empty();
@@ -39,6 +41,7 @@ $('#SearchButton').click(function() {
                             $('#main').html('<table cellpadding="1" cellspacing="0" border="1" class="display" id="example"></table>');
                             $('#example').dataTable
                                 ({
+                                    
                                         "bPaginate": true,
                                         "iDisplayLength": 13,
                                         "aLengthMenu": [[10, 13, 25, 35, 50, 100, -1], [10, 13, 25, 35, 50, 100, "All"]],
@@ -54,7 +57,7 @@ $('#SearchButton').click(function() {
 
                                         "autoWidth": false,
                                 });
-                            //
+                          
                    
                         }
                         else $('#main').html(jsonData.Error)

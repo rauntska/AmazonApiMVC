@@ -7,12 +7,20 @@ table.dataTable {
   clear: both;
   border-collapse: separate;
   border-spacing: 0;
+  color : black;
   /*
    * Header and footer styles
    */
   /*
    * Body styles
    */
+}
+td.details-control {
+    background: url('../resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.details td.details-control {
+    background: url('../resources/details_close.png') no-repeat center center;
 }
 table.dataTable thead th,
 table.dataTable tfoot th {
