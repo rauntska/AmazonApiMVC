@@ -83,8 +83,8 @@ namespace UptimeJob2.Models
         {
             #region Set Amazon Search parameters
             ItemSearch search = new ItemSearch();
-            search.AssociateTag = "te092-21";
-            search.AWSAccessKeyId = "AKIAJJU6EJJTOMCH2DHA";
+            search.AssociateTag = "XX";
+            search.AWSAccessKeyId = "XX";
 
             ItemSearchRequest req = new ItemSearchRequest();
 
@@ -99,7 +99,7 @@ namespace UptimeJob2.Models
 
 
             Amazon.AWSECommerceServicePortTypeClient amzwc = new Amazon.AWSECommerceServicePortTypeClient();
-            amzwc.ChannelFactory.Endpoint.EndpointBehaviors.Add(new AmazonSigningEndpointBehavior("AKIAJJU6EJJTOMCH2DHA", "yvQMsYDiZPhogLYoF3SBooiXCokZXMJpOSTPb8x4"));
+            amzwc.ChannelFactory.Endpoint.EndpointBehaviors.Add(new AmazonSigningEndpointBehavior("XX", "XX"));
 
             try
             {
@@ -119,8 +119,8 @@ namespace UptimeJob2.Models
     }
     public class AmazonSigningMessageInspector : IClientMessageInspector
     {
-        private string accessKeyId = "AKIAJJU6EJJTOMCH2DHA";
-        private string secretKey = "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";
+        private string accessKeyId = "XX";
+        private string secretKey = "XXX";
 
         public AmazonSigningMessageInspector(string accessKeyId, string secretKey)
         {
