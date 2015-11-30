@@ -53,13 +53,12 @@ namespace UptimeJob2.Models
             #region Loop Through The Search Results And Add to Model
             for (int i = 1; i < ModifiedPagesToLoopThrough+1; i++)
             {
-                resp = AmazonRequestByPage(Keyword, i, SearchIndex);
-
+                    resp = AmazonRequestByPage(Keyword, i, SearchIndex);
                     foreach (Item item in resp.Items[0].Item)
                     {
                         Models.DataModels.SearchResult.SearchResultsList SingleSearchResult = new Models.DataModels.SearchResult.SearchResultsList();
                         if (item.ItemAttributes.Author != null)
-                            SingleSearchResult.Author = item.ItemAttributes.Author[0].ToString() ?? "empty";//not working ?      
+                            SingleSearchResult.Author = item.ItemAttributes.Author[0].ToString();    
                         SingleSearchResult.Title = item.ItemAttributes.Title ?? "";
                         SingleSearchResult.ProductGroup = item.ItemAttributes.ProductGroup;
                         if (item.ItemAttributes.ListPrice != null)
@@ -84,16 +83,16 @@ namespace UptimeJob2.Models
         {
             #region Set Amazon Search parameters
             ItemSearch search = new ItemSearch();
-            search.AssociateTag = "te092-21";
-            string accessKeyId="AKIAIRWPVZ5BOJADCYUA";
-            string secretKey="+XICNiCFUOoOY8BMK0b3VEYit1awx5XplyuvI9lf";
-            //search.AWSAccessKeyId = "";
+            //replace these with your account info
+            search.AssociateTag = "X";
+            string accessKeyId="X";
+            string secretKey="X";       
            
             ItemSearchRequest req = new ItemSearchRequest();
 
             req.ResponseGroup = new string[] { "Medium" };
             req.SearchIndex = SearchIndex;
-            // req.Author = "Lansdale";
+            
             req.ItemPage = Convert.ToString(page);
             req.Keywords = Keyword;
 
