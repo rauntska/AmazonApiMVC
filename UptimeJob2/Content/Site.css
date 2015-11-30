@@ -222,8 +222,8 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #e80c4d;
-        background-image: -ms-linear-gradient(left, #ffd811 0%, #a4d4e6 100%);
+    
+        background-image: -ms-linear-gradient(left, #4e595D 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #4E595D 0%, #a4d4e6 100%);
@@ -457,6 +457,8 @@ select {
     -moz-appearance: none;
 
 }
+
+
 
 textarea {
     font-family: inherit;

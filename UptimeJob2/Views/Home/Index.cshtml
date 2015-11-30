@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Main Page";
 }
 @section featured {
     <section class="featured">
@@ -19,7 +19,7 @@
 <div>
         <select name="Category" id="Category">
             <option value="All" selected>All</option>
-            <option value="UnboxVideo">Amazon instant video</option
+            <option value="UnboxVideo">Amazon instant video</option>
             <option value="MobileApps">Apps & Games</option>
             <option value="Baby">Baby</option>
             <option value="Beauty">Beauty</option>
@@ -35,18 +35,44 @@
         </select>
         <input id="SearchInput" type="text" placeholder="Enter Search Keyword" />
         <input id="SearchButton"type="button" value="Search Products" />
-         
+        Currency:
         <select id="Currency" >
               <option value="EUR">EUR</option>
+              <option value="ARS">ARS</option> @*Argentina peso*@
               <option value="AUD">AUD</option> @*Australian Dollar*@
               <option value="BRL">BRL</option> @*Brasilian Real*@
               <option value="CAD">CAD</option> @*Canadian Dollar*@
               <option value="CLP">CLP</option> @*Chile Peso*@
               <option value="CNY">CNY</option> @*China yuan renminbi*@
               <option value="CZK">CZK</option> @*Czech republic kruona*@
-              <option value="DKK">DKK</option> @*Danish krone*@
-              <option value="USD">USD</option>
-              <option value="ARS">ARS</option> @*Argentina peso*@
+              <option value="DKK">DKK</option> @*DenMark krone*@
+              <option value="FJD">FJD</option> @*Fijian dollar*@
+              <option value="HNL">HNL</option> @*honduran lempira*@
+              <option value="HKD">HKD</option> @*Hong Kong Dollar*@
+              <option value="HUF">HUF</option> @*hungary forint*@
+              <option value="ISK">ISK</option> @*Iceland krona*@
+              <option value="INR">INR</option> @*Indian Rupee*@
+              <option value="IDR">IDR</option> @*indonesia rupiah*@
+              <option value="ILS">ILS</option> @*israel shekel*@
+              <option value="JPY">JPY</option> @*Japan Yen*@
+              <option value="KRW">KRW</option> @*korea south won*@
+              <option value="MYR">MYR</option> @*malaysian ringgit*@
+              <option value="MXN">MXN</option> @*Mexican Peso*@
+              <option value="NZD">NZD</option> @*New zealand dollar*@
+              <option value="NOK">NOK</option> @*norway krone*@
+              <option value="PKR">PKR</option> @*pakistan rupee*@
+              <option value="PHP">PHP</option> @*philippines peso*@
+              <option value="PLN">PLN</option> @*poland zloty*@
+              <option value="RUB">RUB</option> @*russian ruble*@
+              <option value="SGD">SGD</option> @*singapore dollar*@
+              <option value="ZAR">ZAR</option> @*south africa rand*@
+              <option value="SEK">SEK</option> @*sweden krona*@
+              <option value="CHF">CHF</option> @*switzerland frank*@
+              <option value="TWD">TWD</option> @*taiwan new dollar*@
+              <option value="THB">THB</option> @*thailand baht*@
+              <option value="TRY">TRY</option> @*turkey lira*@
+              <option value="VND">VND</option> @*viet nam dong*@
+              <option value="USD">USD</option>             
               <option value="GBP">GBP</option> @*british pound*@
          </select>
 </div>

@@ -59,19 +59,20 @@ namespace UptimeJob2.Models
                     {
                         Models.DataModels.SearchResult.SearchResultsList SingleSearchResult = new Models.DataModels.SearchResult.SearchResultsList();
                         if (item.ItemAttributes.Author != null)
-                            SingleSearchResult.Author = item.ItemAttributes.Author[0].ToString() ?? "empty";//not working ?
-                       // else SingleSearchResult.Author = "EMPTY";
-
+                            SingleSearchResult.Author = item.ItemAttributes.Author[0].ToString() ?? "empty";//not working ?      
                         SingleSearchResult.Title = item.ItemAttributes.Title ?? "";
                         SingleSearchResult.ProductGroup = item.ItemAttributes.ProductGroup;
                         if (item.ItemAttributes.ListPrice != null)
-                            SingleSearchResult.Price = Convert.ToString(Convert.ToDouble(item.ItemAttributes.ListPrice.FormattedPrice.TrimStart('£')) * Rate);
+                        {
+                            string Trimmed = item.ItemAttributes.ListPrice.FormattedPrice.Trim('£');
+                            Trimmed = Trimmed.Replace(",", string.Empty);
+                            SingleSearchResult.Price = Convert.ToString(Math.Round(Convert.ToDouble(Trimmed) * Rate, 2));
+                        }
                         else SingleSearchResult.Price = null;
 
                         SearchresultsList.Add(SingleSearchResult);
                     }
-              }
-            
+              }           
            
             #endregion
 
@@ -83,9 +84,11 @@ namespace UptimeJob2.Models
         {
             #region Set Amazon Search parameters
             ItemSearch search = new ItemSearch();
-            search.AssociateTag = "XX";
-            search.AWSAccessKeyId = "XX";
-
+            search.AssociateTag = "te092-21";
+            string accessKeyId="AKIAIRWPVZ5BOJADCYUA";
+            string secretKey="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";
+            //search.AWSAccessKeyId = "";
+           
             ItemSearchRequest req = new ItemSearchRequest();
 
             req.ResponseGroup = new string[] { "Medium" };
@@ -99,7 +102,7 @@ namespace UptimeJob2.Models
 
 
             Amazon.AWSECommerceServicePortTypeClient amzwc = new Amazon.AWSECommerceServicePortTypeClient();
-            amzwc.ChannelFactory.Endpoint.EndpointBehaviors.Add(new AmazonSigningEndpointBehavior("XX", "XX"));
+            amzwc.ChannelFactory.Endpoint.EndpointBehaviors.Add(new AmazonSigningEndpointBehavior(accessKeyId, secretKey));
 
             try
             {
@@ -119,8 +122,8 @@ namespace UptimeJob2.Models
     }
     public class AmazonSigningMessageInspector : IClientMessageInspector
     {
-        private string accessKeyId = "XX";
-        private string secretKey = "XXX";
+        private string accessKeyId = "";
+        private string secretKey = "";
 
         public AmazonSigningMessageInspector(string accessKeyId, string secretKey)
         {
